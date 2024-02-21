@@ -61,12 +61,7 @@
 
         /* Estilo do botão "Não" */
         #botao_nao {
-    background-color: #ff7582; /* Rosa intenso */
-    position: fixed; /* Posição fixa */
-    bottom: 20px; /* Afastado 20px do fundo */
-    left: 20px; /* Afastado 20px da esquerda */
-}
-
+            background-color: #ff7582; /* Rosa intenso */
         }
 
         /* Estilo da imagem */
@@ -108,8 +103,6 @@
             <div class="button" onclick="responder('sim')">Sim</div>
             <div class="button" id="botao_nao" onmouseover="moverBotao()">Não</div>
         </div>
-        <!-- Nova div para o botão "Não" -->
-<div id="botao_nao" onmouseover="moverBotao()">Não</div>
     </div>
 
     <!-- Adicionando imagens nos cantos -->
@@ -129,12 +122,11 @@
         }
         
         function moverBotao() {
-    var botaoNao = document.getElementById('botao_nao');
-    var novoTop = Math.random() * (window.innerHeight - botaoNao.clientHeight);
-    var novoLeft = Math.random() * (window.innerWidth - botaoNao.clientWidth);
-    botaoNao.style.transform = `translate(${novoLeft}px, ${novoTop}px)`;
-}
-{
+            var botaoNao = document.getElementById('botao_nao');
+            var novoTop = Math.random() * (window.innerHeight - botaoNao.clientHeight);
+            var novoLeft = Math.random() * (window.innerWidth - botaoNao.clientWidth);
+            botaoNao.style.transform = `translate(${novoLeft}px, ${novoTop}px)`;
+            function moverBotao() {
     var botaoNao = document.querySelector('.button.nao');
     var novoTop = Math.random() * (window.innerHeight - botaoNao.clientHeight);
     var novoLeft = Math.random() * (window.innerWidth - botaoNao.clientWidth);
