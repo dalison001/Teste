@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite para um Date Romântico</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7e0e6; /* Rosa suave */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative; /* Adicionando posição relativa ao corpo */
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Adicionando posição relativa ao contêiner */
+        }
+
+        .button.nao {
+    background-color: #ff7582; /* Rosa intenso */
+    position: fixed; /* Fixando a posição do botão */
+}
+
+        h1 {
+            color: #6c5b7b; /* Roxo suave */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #6c5b7b; /* Roxo suave */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #a05195; /* Roxo mais intenso */
+        }
+
+        /* Estilo do botão "Não" */
+        #botao_nao {
+            background-color: #ff7582; /* Rosa intenso */
+        }
+
+        /* Estilo da imagem */
+        .imagem {
+            position: absolute;
+            width: 100px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Posicionamento das imagens nos cantos */
+        #imagem_top_esquerda {
+            top: 0;
+            left: 0;
+        }
+
+        #imagem_top_direita {
+            top: 0;
+            right: 0;
+        }
+
+        #imagem_bottom_esquerda {
+            bottom: 0;
+            left: 0;
+        }
+
+        #imagem_bottom_direita {
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Você gostaria de sair para um date romântico?</h1>
+        <div class="button-container">
+            <div class="button" onclick="responder('sim')">Sim</div>
+            <div class="button" id="botao_nao" onmouseover="moverBotao()">Não</div>
+        </div>
+    </div>
+
+    <!-- Adicionando imagens nos cantos -->
+    <img class="imagem" id="imagem_top_esquerda" src="1.jpg" alt="Imagem Topo Esquerdo">
+    <img class="imagem" id="imagem_top_direita" src="2.jpg" alt="Imagem Topo Direito">
+    <img class="imagem" id="imagem_bottom_esquerda" src="3.jpg" alt="Imagem Rodapé Esquerdo">
+    <img class="imagem" id="imagem_bottom_direita" src="4.jpg" alt="Imagem Rodapé Direito">
+    
+    
+    <script>
+        function responder(resposta) {
+            if (resposta === 'sim') {
+                window.location.href = "pagina2.html";
+            } else {
+                alert('Que pena! Talvez da próxima vez.');
+            }
+        }
+        
+        function moverBotao() {
+            var botaoNao = document.getElementById('botao_nao');
+            var novoTop = Math.random() * (window.innerHeight - botaoNao.clientHeight);
+            var novoLeft = Math.random() * (window.innerWidth - botaoNao.clientWidth);
+            botaoNao.style.transform = `translate(${novoLeft}px, ${novoTop}px)`;
+            function moverBotao() {
+    var botaoNao = document.querySelector('.button.nao');
+    var novoTop = Math.random() * (window.innerHeight - botaoNao.clientHeight);
+    var novoLeft = Math.random() * (window.innerWidth - botaoNao.clientWidth);
+    // Limitando a posição do botão para ficar dentro da janela do navegador
+    novoTop = Math.max(novoTop, 0);
+    novoTop = Math.min(novoTop, window.innerHeight - botaoNao.clientHeight);
+    novoLeft = Math.max(novoLeft, 0);
+    novoLeft = Math.min(novoLeft, window.innerWidth - botaoNao.clientWidth);
+    botaoNao.style.transform = `translate(${novoLeft}px, ${novoTop}px)`;
+}
+
+        }
+    </script>
+</body>
