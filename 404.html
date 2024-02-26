@@ -27,16 +27,6 @@
             position: relative; /* Adicionando posição relativa ao contêiner */
         }
 
-        .button.nao {
-    background-color: #ff7582; /* Rosa intenso */
-    position: fixed; /* Fixando a posição do botão */
-}
-
-        h1 {
-            color: #6c5b7b; /* Roxo suave */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
         .button-container {
             display: flex;
             justify-content: center;
@@ -92,59 +82,53 @@
             bottom: 0;
             right: 0;
         }
+
+        footer {
+            position: absolute;
+            top: 20px; /* Ajustando a distância do topo */
+            left: 50%;
+            transform: translateX(-50%);
+            color: #6c5b7b;
+        }
     </style>
 </head>
 <body>
-    
-</audio>
-    <div class="container">
-        <h1>Você gostaria de sair comigo?</h1>
-        <div class="button-container">
-            <div class="button" onclick="responder('sim')">Sim</div>
-            <div class="button" id="botao_nao" onmouseover="moverBotao()">Não</div>
-        </div>
+<footer>Criado por Dalison Lucas</footer>
+<div class="container">
+    <h1>Você gostaria de sair comigo?</h1>
+    <div class="button-container">
+        <div class="button" onclick="responder('sim')">Sim</div>
+        <div class="button" id="botao_nao" onmouseover="moverBotao()">Não</div>
     </div>
+</div>
 
-    <!-- Adicionando imagens nos cantos -->
-    <img class="imagem" id="imagem_top_esquerda" src="1.jpg" alt="Imagem Topo Esquerdo">
-    <img class="imagem" id="imagem_top_direita" src="2.jpg" alt="Imagem Topo Direito">
-    <img class="imagem" id="imagem_bottom_esquerda" src="3.jpg" alt="Imagem Rodapé Esquerdo">
-    <img class="imagem" id="imagem_bottom_direita" src="4.jpg" alt="Imagem Rodapé Direito">
-    
-    
-    <script>
-        function responder(resposta) {
-            if (resposta === 'sim') {
-                window.location.href = "pagina2.html";
-            } else {
-                alert('Que pena! Talvez da próxima vez.');
-            }
+<!-- Adicionando imagens nos cantos -->
+<img class="imagem" id="imagem_top_esquerda" src="1.jpg" alt="Imagem Topo Esquerdo">
+<img class="imagem" id="imagem_top_direita" src="2.jpg" alt="Imagem Topo Direito">
+<img class="imagem" id="imagem_bottom_esquerda" src="3.jpg" alt="Imagem Rodapé Esquerdo">
+<img class="imagem" id="imagem_bottom_direita" src="4.jpg" alt="Imagem Rodapé Direito">
+
+<script>
+    function responder(resposta) {
+        if (resposta === 'sim') {
+            window.location.href = "pagina2.html";
+        } else {
+            alert('Que pena! Talvez da próxima vez.');
         }
-        
-        function moverBotao() {
-            var botaoNao = document.getElementById('botao_nao');
-            var novoTop = Math.random() * (window.innerHeight - botaoNao.clientHeight);
-            var novoLeft = Math.random() * (window.innerWidth - botaoNao.clientWidth);
-            botaoNao.style.transform = `translate(${novoLeft}px, ${novoTop}px)`;
-            function moverBotao() {
-    var botaoNao = document.querySelector('.button.nao');
-    var novoTop = Math.random() * (window.innerHeight - botaoNao.clientHeight);
-    var novoLeft = Math.random() * (window.innerWidth - botaoNao.clientWidth);
-    // Limitando a posição do botão para ficar dentro da janela do navegador
-    novoTop = Math.max(novoTop, 0);
-    novoTop = Math.min(novoTop, window.innerHeight - botaoNao.clientHeight);
-    novoLeft = Math.max(novoLeft, 0);
-    novoLeft = Math.min(novoLeft, window.innerWidth - botaoNao.clientWidth);
-    botaoNao.style.transform = `translate(${novoLeft}px, ${novoTop}px)`;
-}
+    }
 
-  }
-    </script>
-     <audio autoplay loop>
-  <source src="paia.mp3" type="audio/mpeg">
-  Seu navegador não suporta o elemento de áudio.
+    function moverBotao() {
+        var botaoNao = document.getElementById('botao_nao');
+        var novoTop = Math.random() * (window.innerHeight - botaoNao.clientHeight);
+        var novoLeft = Math.random() * (window.innerWidth - botaoNao.clientWidth);
+        botaoNao.style.transform = `translate(${novoLeft}px, ${novoTop}px)`;
+    }
+</script>
+
+<audio autoplay loop>
+    <source src="paia.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
 </audio>
 
-<footer style="text-align: center; margin-top: 20px; color: #6c5b7b;">Criado por Dalison Lucas</footer>
-</audio>
 </body>
+</html>
