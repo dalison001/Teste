@@ -79,10 +79,10 @@ body, html {
 
 video {
     position: absolute;
-    top: 80%;
+    top: 200%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 30%;
+    width: 60%;
     height: auto;
     z-index: 1; /* Define o índice Z para que o gif fique atrás da TV */
 /* Define o índice Z para que o gif fique atrás da TV */
