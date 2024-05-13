@@ -1,4 +1,3 @@
-/* CSS básico para todos os dispositivos */
 body, html {
     margin: 0;
     padding: 0;
@@ -7,41 +6,61 @@ body, html {
 
 .universe {
     width: 100%;
-    height: 100%;
+    height: 100%; /* Alterado para 100vh para preencher toda a altura da tela */
     background: url('fundo.gif') no-repeat center center;
     background-size: cover;
     position: absolute;
     z-index: -1;
 }
-
-.tv {
+.page-title {
     text-align: center;
+    font-size: 32px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #020202; /* Cor das letras */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo com 50% de opacidade */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra */
+    backdrop-filter: blur(5px); /* Efeito de desfoque */
 }
+
+
+
+
+
+.tv img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/* Adicione este CSS ao seu arquivo visual2.css */
 
 .screen {
     text-align: center;
-    font-size: 24px;
+    font-size: 13px;
     margin-top: 0px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
+    color: #fff; /* Cor das letras */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo com 50% de opacidade */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra */
+    backdrop-filter: blur(5px); /* Efeito de desfoque */
 }
 
 .blue-button, .red-button {
     display: inline-block;
     padding: 10px 20px;
-    margin: 10px;
+    margin: 10px; /* Adiciona margem entre os botões */
     font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-decoration: none;
-    color: white;
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: white; /* Cor do texto */
 }
 
 .blue-button {
@@ -57,23 +76,35 @@ body, html {
     
 }
 
+
 video {
-    max-width: 100%; /* Garante que o vídeo não ultrapasse a largura do contêiner pai */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
     height: auto;
-    display: block;
-    margin: 0 auto; /* Centraliza o vídeo horizontalmente */
+    z-index: 1; /* Define o índice Z para que o gif fique atrás da TV */
+/* Define o índice Z para que o gif fique atrás da TV */
 }
 
-/* Media queries para dispositivos móveis */
-@media screen and (max-width: 767px) {
-    .screen {
-        font-size: 18px;
-    }
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 100%; /* Inicia fora da tela */
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    animation: slideText 10s linear infinite; /* Animacao do texto passando */
 }
 
-/* Media queries para tablets e dispositivos menores */
-@media screen and (max-width: 991px) {
-    .screen {
-        font-size: 20px;
-    }
+@keyframes slideText {
+    0% { left: 100%; } /* Começa fora da tela */
+    100% { left: -200%; } /* Termina fora da tela */
+}
+
+.content h1 {
+    font-size: 24px;
+    margin: 0;
 }
