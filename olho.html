@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>????????????????????</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Impede a barra de rolagem */
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Faz a imagem cobrir todo o espaço disponível */
+            animation: fadeOut 5s forwards; /* Animação para desvanecer após 5 segundos */
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <img src='olho.gif' alt="Imagem em Tela Cheia">
+    <script>
+        setTimeout(function(){
+            window.location.href = "index2.html"; // Redireciona após 5 segundos
+        }, 5000);
+    </script>
+</body>
+</html>

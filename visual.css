@@ -1,0 +1,77 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.universe {
+    width: 100%;
+    height: 100%; /* Alterado para 100vh para preencher toda a altura da tela */
+    background: url('universe.jpg') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+}
+.page-title {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff; /* Cor das letras */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo com 50% de opacidade */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra */
+    backdrop-filter: blur(5px); /* Efeito de desfoque */
+}
+
+
+
+.tv {
+    width: 500px; /* Largura da TV */
+    height: 500px; /* Altura da TV */
+    position: absolute; /* Define a posição absoluta */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza a TV */
+    z-index: 2; /* Define o índice Z para ficar na frente do gif */
+}
+
+.tv img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.screen img {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 53%;
+    height: auto;
+    z-index: 1; /* Define o índice Z para que o gif fique atrás da TV */
+}
+
+
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 100%; /* Inicia fora da tela */
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    animation: slideText 10s linear infinite; /* Animacao do texto passando */
+}
+
+@keyframes slideText {
+    0% { left: 100%; } /* Começa fora da tela */
+    100% { left: -200%; } /* Termina fora da tela */
+}
+
+.content h1 {
+    font-size: 24px;
+    margin: 0;
+}
