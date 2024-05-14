@@ -9,10 +9,10 @@ body, html {
     height: 100%;
     background: url('fundo.gif') no-repeat center center;
     background-size: cover;
-    position: fixed;
+    position: absolute;
     z-index: -1;
-}
 
+}
 .page-title {
     text-align: center;
     font-size: 32px;
@@ -20,7 +20,7 @@ body, html {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #f8f8f8;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color:rgba(255, 255, 255, 0.5);
     padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 2px 2px 4px rgba(253, 253, 253, 0.5);
@@ -42,7 +42,7 @@ body, html {
     padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
 }
 
-.video-container iframe {
+.video-container video {
     position: absolute;
     top: 0;
     left: 0;
@@ -52,7 +52,14 @@ body, html {
 }
 
 .screen {
-    position: relative; /* Alterado para relativo */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
     z-index: 2;
 }
 
