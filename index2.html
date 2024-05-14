@@ -14,10 +14,8 @@
     <div class="tv">
         <!-- Container para o vídeo -->
         <div class="video-container">
-            <video id="video" controls autoplay loop>
-                <source src="matrix.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <!-- Substitua este código pelo código do iframe fornecido pelo YouTube -->
+            <iframe width="560" height="315" src="https://www.youtube.com/watch?v=62itoxtF-kU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
         <div class="screen">
@@ -29,14 +27,14 @@
         </div>
     </div>
 
-    <audio id="background-audio" preload="metadata" autoplay loop>
+    <audio id="background-audio" preload="metadata" controls autoplay>
         <source src="chiado.mp3" type="audio/mpeg">
         Your browser does not support the audio tag.
     </audio>
 
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-            const video = document.getElementById('video');
+            const video = document.querySelector('.video-container iframe');
             const screen = document.querySelector('.screen');
             const backgroundAudio = document.getElementById('background-audio');
 
