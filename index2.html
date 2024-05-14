@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escolha uma opção</title>
+    <title>;@#@#@#@%$%¨$&$¨&@#$%!</title>
     <link rel="stylesheet" href="visual2.css">
 </head>
 <body>
@@ -12,19 +12,20 @@
     </div>
 
     <div class="tv">
-        <!-- Container para o vídeo e os botões -->
+        <!-- Container para o vídeo -->
         <div class="video-container">
             <video id="video" controls autoplay loop>
                 <source src="matrix.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="overlay">
-                <h2 class="title">Escolha uma opção:</h2>
-                <!-- Opção Azul -->
-                <button class="blue-button"><a href="pagina3.html">Azul</a></button>
-                <!-- Opção Vermelha -->
-                <button class="red-button"><a href="pagina2.html">Vermelho</a></button>
-            </div>
+        </div>
+
+        <div class="screen">
+            <h2 class="title">Escolha uma opção:</h2>
+            <!-- Opção Azul -->
+            <button class="blue-button"><a href="pagina3.html">Azul</a></button>
+            <!-- Opção Vermelha -->
+            <button class="red-button"><a href="pagina2.html">Vermelho</a></button>
         </div>
     </div>
 
@@ -32,5 +33,31 @@
         <source src="chiado.mp3" type="audio/mpeg">
         Your browser does not support the audio tag.
     </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const video = document.getElementById('video');
+            const screen = document.querySelector('.screen');
+            const backgroundAudio = document.getElementById('background-audio');
+
+            // Esconde a tela e exibe o vídeo ao iniciar a página
+            screen.style.display = 'none';
+            video.style.display = 'block';
+
+            // Pausa o vídeo e exibe a tela quando o vídeo é pausado
+            video.addEventListener('pause', () => {
+                video.style.display = 'none';
+                screen.style.display = 'block';
+                backgroundAudio.play();
+            });
+
+            // Reproduz o vídeo e esconde a tela quando o vídeo é reproduzido
+            video.addEventListener('play', () => {
+                screen.style.display = 'none';
+                video.style.display = 'block';
+                backgroundAudio.pause();
+            });
+        });
+    </script>
 </body>
 </html>
