@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>;@#@#@#@%$%¨$&$¨&@#$%!</title>
+    <title>@#@#@#@#@##@!/title>
     <link rel="stylesheet" href="visual2.css">
 </head>
 <body>
@@ -12,11 +12,7 @@
     </div>
 
     <div class="tv">
-        <!-- Container para o vídeo -->
-        <div class="video-container">
-            
-        </div>
-
+        <!-- Container para os botões -->
         <div class="screen">
             <h2 class="title">Escolha uma opção:</h2>
             <!-- Opção Azul -->
@@ -26,33 +22,26 @@
         </div>
     </div>
 
-    <audio id="background-audio" preload="metadata" autoplay loop>
-        <source src="chido.mp3" type="audio/mpeg">
-        Your browser does not support the audio tag.
+    <audio id="background-audio" preload="metadata" controls autoplay>
+        <source src="none.mp3" type="audio/mpeg">
+        Seu navegador não suporta a tag de áudio.
     </audio>
 
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-            const video = document.getElementById('video');
             const screen = document.querySelector('.screen');
             const backgroundAudio = document.getElementById('background-audio');
 
-            // Esconde a tela e exibe o vídeo ao iniciar a página
-            screen.style.display = 'none';
-            video.style.display = 'block';
+            // Exibe a tela ao iniciar a página
+            screen.style.display = 'block';
+            backgroundAudio.play();
 
-            // Pausa o vídeo e exibe a tela quando o vídeo é pausado
-            video.addEventListener('pause', () => {
-                video.style.display = 'none';
-                screen.style.display = 'block';
-                backgroundAudio.play();
-            });
-
-            // Reproduz o vídeo e esconde a tela quando o vídeo é reproduzido
-            video.addEventListener('play', () => {
-                screen.style.display = 'none';
-                video.style.display = 'block';
-                backgroundAudio.pause();
+            // Pausa a música quando o botão é clicado
+            const buttons = document.querySelectorAll('.blue-button, .red-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    backgroundAudio.pause();
+                });
             });
         });
     </script>
