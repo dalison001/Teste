@@ -2,11 +2,6 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000;
-    overflow: hidden;
 }
 
 .universe {
@@ -16,8 +11,8 @@ body, html {
     background-size: cover;
     position: absolute;
     z-index: -1;
-}
 
+}
 .page-title {
     text-align: center;
     font-size: 32px;
@@ -25,7 +20,7 @@ body, html {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #f8f8f8;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color:rgba(255, 255, 255, 0.5);
     padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 2px 2px 4px rgba(253, 253, 253, 0.5);
@@ -35,14 +30,15 @@ body, html {
 .tv {
     position: relative;
     width: 50%;
-    max-width: 800px;
     margin: auto;
     text-align: center;
+    margin-top: 50px;
 }
 
 .video-container {
     position: relative;
     width: 100%;
+    height: 0;
     padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
 }
 
@@ -52,33 +48,22 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
     z-index: 1;
 }
 
-.overlay {
+.screen {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.5); /* Background semi-transparent */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
     border-radius: 10px;
     z-index: 2;
-    pointer-events: none; /* Allow clicks through the overlay */
 }
 
-.overlay .title {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color: #fff;
-}
-
-button {
+.blue-button, .red-button {
     display: inline-block;
     padding: 10px 20px;
     margin: 10px;
@@ -88,29 +73,18 @@ button {
     cursor: pointer;
     text-decoration: none;
     color: white;
-    pointer-events: all; /* Allow clicks on the buttons */
 }
 
-button.blue-button {
-    background-color: #0099ff;
+.blue-button {
+    background-color: blue;
     background-image: linear-gradient(to bottom, #0099ff 0%, #55ccff 100%);
     box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-button.blue-button:hover {
-    background-color: #007acc;
-    background-image: linear-gradient(to bottom, #007acc 0%, #33b5ff 100%);
-}
-
-button.red-button {
-    background-color: #ff0000;
-    background-image: linear-gradient(to bottom, #ff0000 0%, #ff5555 100%);
+.red-button {
+    background-color: red;
+    background-image: linear-gradient(to bottom, red 0%, #ff5555 100%);
     box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
-}
-
-button.red-button:hover {
-    background-color: #cc0000;
-    background-image: linear-gradient(to bottom, #cc0000 0%, #ff3333 100%);
 }
 
 audio {
