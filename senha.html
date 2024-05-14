@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>senha</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Para a imagem ocupar toda a tela */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0d0d0d; /* Cor de fundo preta */
+        }
+
+        img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Para a imagem cobrir completamente a tela */
+            z-index: -1; /* Adiciona esta linha para enviar a imagem para o fundo */
+        }
+
+        .form-container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco transparente */
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1; /* Garante que o formulário esteja na frente */
+        }
+
+        input[type="password"] {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: #4CAF50; /* Verde */
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <img src="senhx.gif" alt="Tortura">
+    <div class="form-container">
+        <h2>Insira a senha para prosseguir:</h2>
+        <form id="passwordForm" onsubmit="checkPassword(); return false;">
+            <input type="password" id="passwordInput" placeholder="Senha">
+            <br>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("passwordInput").value;
+            if (password === "voceeespecial") {
+                window.location.href = "load copy.html";
+            } else {
+                if (confirm("Senha incorreta. Deseja voltar para a página do enigma?")) {
+                    window.location.href = "red.html"; // Substitua pelo URL da página do enigma
+                } else {
+                    alert("Tente novamente.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
