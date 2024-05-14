@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>pane no sistema alguem me desconfigurou</title>
+<title>Pane no sistema, alguém me desconfigurou</title>
 <style>
     body {
         margin: 0;
@@ -14,50 +14,48 @@
     }
     #video-container {
         position: relative;
-        padding-bottom: 56.25%; /* Proporção 16:9 para vídeo responsivo */
-        padding-top: 30px;
-        height: 0;
-        overflow: hidden;
+        width: 100%;
+        height: 100vh; /* 100% da altura da viewport */
     }
     #video {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100%;
-        background-color: #000; /* Cor de fundo do vídeo */
     }
 </style>
 </head>
 <body>
 
 <div id="video-container">
-    <video id="video" controls autoplay muted poster="imagem.jpg">
-        <source src="matrix.mp4" type="video/mp4">
-        Seu navegador não suporta a tag de vídeo.
-    </video>
+    <!-- Vídeo do YouTube incorporado -->
+    <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/xBgBbe_DPyM?si=cX_t8sWMbMvn7YfU&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 <script>
-    var video = document.getElementById("video");
+    // Carrega a API do YouTube de forma assíncrona
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-    // Adiciona um evento de escuta para verificar quando o vídeo termina
-    video.addEventListener("ended", function() {
-        var continuar = confirm("Deseja avançar para o próximo passo?");
-        if (continuar) {
-            // Redireciona para a próxima página
+    // Cria a variável do player
+    var player;
+
+    // Função chamada pela API do YouTube quando a API estiver pronta
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('video', {
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    // Função chamada quando o estado do player muda
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.ENDED) {
+            // Redireciona para a próxima página quando o vídeo termina
             window.location.href = "index2.html";
         }
-    });
-
-    // Adiciona um evento de escuta para verificar quando o vídeo é pausado
-    video.addEventListener("pause", function() {
-        var continuar = confirm("Deseja avançar para o próximo passo?");
-        if (continuar) {
-            // Redireciona para a próxima página
-            window.location.href = "index2.html";
-        }
-    });
+    }
 </script>
 
 </body>
